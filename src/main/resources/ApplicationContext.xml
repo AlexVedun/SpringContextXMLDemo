@@ -62,10 +62,27 @@
 		<constructor-arg value="Russian" index="0" type="String"></constructor-arg>
 		<constructor-arg value="3" index="1" type="int"></constructor-arg>
 	</bean>
+        
+        <bean id="cleric_unit1" class="builder.Unit">
+            <constructor-arg value="Russian" index="0" type="String"></constructor-arg>
+            <constructor-arg value="1" index="1" type="int"></constructor-arg>
+            <property name="person" ref="cleric"></property>
+            <property name="tool" ref="stick"></property>
+        </bean>
+        
+        <bean id="cleric_unit2" class="builder.Unit">
+            <constructor-arg value="German" index="0" type="String"></constructor-arg>
+            <constructor-arg value="3" index="1" type="int"></constructor-arg>
+            <property name="person" ref="cleric"></property>
+            <property name="tool" ref="sword"></property>
+        </bean>
 
 	<bean id="peasant" class="implementations.Peasant"></bean>
 	<bean id="warrior" class="implementations.Warrior"></bean>
 	
 	<bean id="sword" class="implementations.Sword"></bean>
 	<bean id="plow" class="implementations.Plow"></bean>
+        
+        <bean id="cleric" class="implementations.Cleric"></bean>
+        <bean id="stick" class="implementations.Stick"></bean>
 </beans>
